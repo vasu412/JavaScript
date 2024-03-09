@@ -18,7 +18,6 @@ let sideFilter = (val) => {
     return filterData;
 }
 
-
 let printing = (val) => {
     main.innerHTML = '';
     val.forEach(e => {
@@ -79,7 +78,7 @@ let printing = (val) => {
 }
 
 let load2 = (e) => {
-    let val = e.target.value;
+    let val = e.target.value.toLowerCase();
     let ans=load(val);
     printing(ans)
 }
@@ -132,9 +131,15 @@ bar.addEventListener('click',()=>{
             let ans = sideFilter(x.innerText);
             printing(ans);
             let load3 = (e) => {
-                let val = e.target.value;
-                let ans2=load(val);
-                printing(ans2)
+                let val = e.target.value.toLowerCase();
+                filterData = emojiList.filter(e=>{
+                    if(e.category===x.innerText){
+                        if(e.description.indexOf(val) != -1) {return true;}
+                        if(e.aliases.find(ele => ele===val)) {return true;}
+                        if(e.tags.find(ele => ele===val)) {return true;}
+                    }
+                })
+                printing(filterData)
             }
             input.addEventListener('keyup' ,load3);
         })
