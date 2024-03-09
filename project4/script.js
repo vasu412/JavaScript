@@ -11,6 +11,14 @@ let load = (val) => {
     return filterData;
 }
 
+let sideFilter = (val) => {
+    filterData = emojiList.filter(e=>{
+        if(e.category.indexOf(val) != -1) {return true;}
+    })
+    return filterData;
+}
+
+
 let printing = (val) => {
     main.innerHTML = '';
     val.forEach(e => {
@@ -103,6 +111,7 @@ let side = () => {
         })
         if(e.category!=check){
             p.innerHTML = e.category;
+            p.classList.add('p')
             check = e.category;
             data.appendChild(p);
         }
@@ -117,10 +126,24 @@ bar.addEventListener('click',()=>{
     if(count===0){side();}
     input.style.marginLeft = '385px'
     count++;
+    let p = document.querySelectorAll('.p');
+    p.forEach((x)=>{
+        x.addEventListener('click',function(){
+            let ans = sideFilter(x.innerText);
+            printing(ans);
+            let load3 = (e) => {
+                let val = e.target.value;
+                let ans2=load(val);
+                printing(ans2)
+            }
+            input.addEventListener('keyup' ,load3);
+        })
+    })
 })
 
 cross.addEventListener('click',()=>{
     bar.style.display ='block';
     left.style.display = 'none';
     input.style.marginLeft = '500px'
+    printing(emojiList)
 })
