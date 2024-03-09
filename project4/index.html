@@ -12,6 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body{
             background-color: black;
         }
@@ -38,14 +39,40 @@
         main{
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left{
+            float: left;
+            overflow: scroll;
+            background-color: gray;
+            color: black;
+            height: 100vh;
+            width: 250px;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <h1>Emojee Application 🔍 </h1>
-    <input type="text" placeholder="Search your EMOJEE!" class="input" size="60">
-    <hr style="margin-bottom: 20px;">
-    <main></main>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 bar" style="color: white;height:40px; top:5px ;position:absolute ; left : 5px">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+    <div class="left">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 cross" style="color: white;height:27px; top:5px ;position:absolute ; left : 5px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>          
+        <h1 style="margin-bottom: 20px;">Category</h1>
+        <hr>
+        <div class="left_data"></div>
+    </div>      
+    <div style="overflow: scroll; height: 100vh;">
+        <h1>Emojee Application 🔍 </h1>
+        <input type="text" placeholder="Search your EMOJEE!" class="input" size="60">
+        <hr style="margin-bottom: 20px;">
+        <main></main>
+    </div>
+    
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

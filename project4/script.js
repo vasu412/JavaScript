@@ -8,9 +8,12 @@ let load = (val) => {
         if(e.aliases.find(ele => ele===val)) {return true;}
         if(e.tags.find(ele => ele===val)) {return true;}
     })
+    return filterData;
+}
 
+let printing = (val) => {
     main.innerHTML = '';
-    filterData.forEach(e => {
+    val.forEach(e => {
         const div = document.createElement('div');
         const cont1 = document.createElement('div');
         const cont2 = document.createElement('div');
@@ -50,7 +53,6 @@ let load = (val) => {
         div.style.margin = '20px';
         div.style.borderRadius = '13px';
         div.style.fontFamily = '"Cinzel", serif';
-        div.style.overflow = 'scroll';
         div.style.boxShadow = '1px 1px 5px #bdbbb7';
         div.style.hover = 'display:none';
         div.style.backgroundColor = 'black';
@@ -70,8 +72,55 @@ let load = (val) => {
 
 let load2 = (e) => {
     let val = e.target.value;
-    load(val);
+    let ans=load(val);
+    printing(ans)
 }
 
-window.addEventListener('load',load(''));
+window.addEventListener('load',printing(emojiList));
 input.addEventListener('keyup' ,load2);
+
+let left = document.querySelector('.left');
+let data = document.querySelector('.left_data');
+let cross = document.querySelector('.cross');
+
+let side = () => {
+    let check = " ";
+    emojiList.forEach((e)=>{
+        let p = document.createElement('p');
+        p.style.fontFamily = '"Cinzel", serif';
+        p.style.padding = '15px';
+        p.addEventListener('mouseover' , function(){
+            p.style.backgroundColor = 'black'
+            p.style.color='white';
+            p.style.borderRadius = '10px'
+            p.style.transition ='all .5s ease';
+        })
+        p.addEventListener('mouseleave' , function(){
+            p.style.backgroundColor = 'gray'
+            p.style.color='black';
+            p.style.borderRadius = '10px'
+            p.style.transition ='all .5s ease';
+        })
+        if(e.category!=check){
+            p.innerHTML = e.category;
+            check = e.category;
+            data.appendChild(p);
+        }
+    })
+}
+let count =0;
+
+const bar = document.querySelector('.bar');
+bar.addEventListener('click',()=>{
+    bar.style.display ='none';
+    left.style.display = 'block';
+    if(count===0){side();}
+    input.style.marginLeft = '385px'
+    count++;
+})
+
+cross.addEventListener('click',()=>{
+    bar.style.display ='block';
+    left.style.display = 'none';
+    input.style.marginLeft = '500px'
+})
