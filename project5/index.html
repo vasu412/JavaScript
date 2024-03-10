@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping site</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+    </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .left{
+            overflow: scroll;
+            float: left;
+            width: 88vw;
+            height: 100vh;
+            border-right: 1px solid black;
+            /* background-color: black; */
+        }
+        .left h1{
+            margin: 0 20px;
+        }
+        .right{
+            float: right;
+            overflow: scroll;
+            width: 12vw;
+            height: 100vh;
+            text-align: center;
+            /* background-color: blue; */
+        }
+        .products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .item{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 520px;
+            width: 260px;
+            /* border: 2px solid red; */
+            margin-right: 20px;
+            font-family: "Ubuntu", sans-serif;
+            letter-spacing: 0;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+        .img{
+            height: 263px;
+            width: 255px;
+        }
+        .img img{
+            height: 200px;
+            width: 140px;
+            margin-left: 70px;
+        }
+
+        .div span{
+            font-size: 28px;
+            margin: 4px ;
+        }
+
+        sup{
+            font-size: 14px;
+        }
+
+        .item button{
+            border-radius: 20px;
+            border: none;
+            margin-top: 40px;
+            height: 35px;
+            width: 230px;
+            background-color: #FFD814;
+        }
+
+        button:hover{
+            background-color: #FCD200;
+        }
+
+        .right p{
+            font-family: "Ubuntu", sans-serif;
+            letter-spacing: 0;
+            font-size: 15px;
+            margin: 350px 13px;
+        }
+
+        .cart_data{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div style="background-color: #232f3e; padding: 20px; color: white;">
+            <h1>PRODUCTS</h1>
+        </div>
+        <hr style="margin-bottom: 20px;">
+        <div class="products">
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/41NQN8irrVL._MCnd_AC_.jpg" >
+                </div>
+                <p><b>The Derma Co</b> 1% Hyaluronic Sunscreen Aqua Ultra Light Gel with SPF 50 PA++++ For Broad Spectrum, UV A, UV B & Blue Light Protection - 50g(dermaco)</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">Unscented · Wrinkle Treatment,Pore Treatment</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-16%</span>
+                    <span><sup>&#8377;</sup>418<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;499.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="0">Add to Cart</button>
+            </div>
+            
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/31SOMn7LufL._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>Brinton</b> Healthcare UvDoux Face & Body Sunscreen gel with SPF 50 PA+++ in Matte Finish and Oil Free Formula| Water Resistant Sunscreen| Protection against UVA/UVB Rays (50 GM)</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">50 Sun Protection Factor (SPF)</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-15%</span>
+                    <span><sup>&#8377;</sup>630<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;745.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="1">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img" >
+                    <img src="https://m.media-amazon.com/images/I/311UQSlLlDL._MCnd_AC_.jpg" style="width: 110px;" alt="">
+                </div>
+                <p><b>Mamaearth</b> Vitamin C Daily Glow Sunscreen SPF 50 PA+++ | No White Cast with Vitamin C & Turmeric | Lightweight | Sun Protection & Glow | For Women & Men | All Skin Types | 80gm</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">80 Grams · 180 Grams · 1</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-20%</span>
+                    <span><sup>&#8377;</sup>359<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;499.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="2">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/41yZpfqJQAL._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>FIXDERMA</b> Shadow Sunscreen Spf 30+ Gel, Broad Spectrum Sunscreen For Oily Skin, Uva & Uvb Protection For Unisex, Body & Face, Non Greasy & Water Resistant, 40g</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">SHADOW SPF 30 GEL · Oil ControlSHADOW SPF 30 GEL </b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-10%</span>
+                    <span><sup>&#8377;</sup>198<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;220.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="3">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/416pDzJljOL._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>Aqualogica</b> Glow+ Dewy Sunscreen SPF 50 PA++++ | UVA/B & Blue Light Protection for Men & Women | Oily, Dry, Sensitive & Combination Skin | Fragrance-Free | 50g</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">Papaya · Ultra-Violet Protection</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-17%</span>
+                    <span><sup>&#8377;</sup>372<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;449.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="4">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/31XmKBGN-SL._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>LAKMÉ</b> Lakme Sun Expert, SPF 50 PA+++ Tinted Sunscreen, 100g, for Sun Protection with Natural Matte Finish, Dermatologically Tested, For All Skin Types</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">Cucumber · Dark Spot Correction</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-43%</span>
+                    <span><sup>&#8377;</sup>329<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;575.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="5">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/31wbbfrv5WL._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>Neutrogena</b> Ultra Sheer Sunscreen SPF 50+ | Broad Spectrum UVA/UVB PA++++ | No White Cast | Water resistant, Ultra light & Non sticky | For Oily, Dry & Sensitive Skin </p>
+                <b style="font-size: 14.5px; margin-top: 5px;">Non-ComedogenicUnscented</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-52%</span>
+                    <span><sup>&#8377;</sup>300<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;625.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="6">Add to Cart</button>
+            </div>
+
+            <div class="item">
+                <div class="img">
+                    <img src="https://m.media-amazon.com/images/I/313nf+p926L._MCnd_AC_.jpg" alt="">
+                </div>
+                <p><b>Minimalist</b> Sunscreen SPF 50 PA++++ | Clinically Tested in US (In-Vivo) | Lightweight with Multi-Vitamins | No White Cast | Broad Spectrum | For Women & Men | 50g</p>
+                <b style="font-size: 14.5px; margin-top: 5px;">Unscented · Hydrating</b>
+                <div style="display: inline; align-items: center;" class="div" >
+                    <span style="font-weight: 300; color: #cc1c39;">-10%</span>
+                    <span><sup>&#8377;</sup>379<sup>00</sup></span>
+                    <span style="font-size: 14px; color: rgb(90, 88, 88);"><del>&#8377;399.00</del></span>
+                </div>
+                <p style="font-size: 13px; font-weight: 400; margin-top: 5px;">FREE Delivery over &#8377;499</p>
+                <button value="7">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="right">
+        <h3 style="margin: 10px 0; display: none;" class="rightH">CART</h3>
+        <h4 style="margin: 10px 0; display: none;" class="rightH2">SubTotal</h4>
+        <span style="font-weight: 300; color: #cc1c39; margin: 0; display: none;" class="span"></span>
+        <hr class="span" style="display: none;">
+        <p class="rightP">No Product added to the cart</p>
+        <div class="cart_data"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
