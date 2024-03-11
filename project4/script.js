@@ -96,6 +96,7 @@ let side = () => {
         let p = document.createElement('p');
         p.style.fontFamily = '"Cinzel", serif';
         p.style.padding = '15px';
+
         p.addEventListener('mouseover' , function(){
             p.style.backgroundColor = 'black'
             p.style.color='white';
@@ -108,6 +109,7 @@ let side = () => {
             p.style.borderRadius = '10px'
             p.style.transition ='all .5s ease';
         })
+
         if(e.category!=check){
             p.innerHTML = e.category;
             p.classList.add('p')
@@ -122,6 +124,8 @@ const bar = document.querySelector('.bar');
 bar.addEventListener('click',()=>{
     bar.style.display ='none';
     left.style.display = 'block';
+    input.value = "";
+    printing(emojiList);
     if(count===0){side();}
     input.style.marginLeft = '385px'
     count++;
@@ -150,5 +154,6 @@ cross.addEventListener('click',()=>{
     bar.style.display ='block';
     left.style.display = 'none';
     input.style.marginLeft = '500px'
+    input.value = "";
     printing(emojiList)
 })
