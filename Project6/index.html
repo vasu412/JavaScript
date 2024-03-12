@@ -4,8 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Teko:wght@300..700&display=swap');
+    </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        h1{
+            text-align: center;
+            color: white;
+            background-color: #409ade;
+            width: fit-content;
+            margin: auto;
+            padding: 1px 20px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            font-family: "Teko", sans-serif;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            font-size: 36px;
+            position:sticky ;
+            top: 0;
+        }
+
+        .box{
+            height: 80vh;
+            width: 85vw;
+            margin: auto;
+            border: 4px solid;
+            border-color: #409ade;
+            border-radius: 20px;
+            margin-top: 75px;
+            overflow: scroll;
+        }
+
+        form{
+            margin: 20px 0px;
+            margin-left: 175px;
+            font-family: "Teko", sans-serif;
+            margin-bottom: 40px;
+            position:sticky ;
+            top: 75px;
+        }
+
+        input{
+            padding: 10px;
+            margin-right: 10px;
+            border: none;
+            background-color: #409ade;
+            border-radius: 5px;
+            color: white;
+        }
+
+        input::placeholder{
+            color: white;
+        }
+
+        button{
+            padding: 10px 35px;
+            color: white;
+            background-color: #409ade;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .div{
+            border-image: linear-gradient(to right, #373b44, #4286f4,#373b44) 1;
+            border-bottom:3px solid ;
+            width: 70vw;
+            height: 8vh;
+            margin: auto;
+            padding: 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-family: "Arimo", sans-serif;
+            font-size: 17px;
+        }
+
+        .div2{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 250px;
+        }
+
+        .plus:hover{
+            cursor: pointer;
+        }
+
+        .minus:hover{
+            cursor: pointer;
+        }
+
+        .del:hover{
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+
+    <div class="box">
+        <h1>LEADER BOARD</h1>
+
+        <form action="#" class="form">
+            <input type="text" placeholder="First Name" required class="Fname">
+            <input type="text" placeholder="Last Name" required class="Lname">
+            <input type="text" placeholder="Country" required class="country">
+            <input type="number" placeholder="Score" required class="score">
+            <button class="button" >ADD PLAYER</button>
+        </form>
+
+        <div class="box2" style="width: 100%; "></div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
