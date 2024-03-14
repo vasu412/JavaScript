@@ -45,7 +45,6 @@ window.addEventListener('load',()=>{
     },1000)
 } )
 
-
 let fonts = fetch("https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyB6vhwcBZYh_4mY6sgMuKuZT7KoILcGVvE");
 
 let select = document.getElementById('font')
@@ -195,3 +194,17 @@ bold.addEventListener('click',()=>{
         b--;
     }
 })
+
+let img = document.querySelector('.img')
+let images = fetch("https://pixabay.com/api/?key=42868898-ed34784613294936d0d4f6293&q=yellow+flowers&image_type=photo");
+async function getImg(){
+    let data = await images;
+    let res = await data.json();
+    console.log(res);
+    img.addEventListener('click',()=>{
+        let i=Math.floor(Math.random()*19);
+        main.style.backgroundImage = `url(${res.hits[i].previewURL})`
+    })
+}
+
+getImg();
