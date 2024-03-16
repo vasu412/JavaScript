@@ -196,14 +196,16 @@ bold.addEventListener('click',()=>{
 })
 
 let img = document.querySelector('.img')
-let images = fetch("https://pixabay.com/api/?key=42868898-ed34784613294936d0d4f6293&q=yellow+flowers&image_type=photo");
+let images = fetch("https://api.unsplash.com/photos/?client_id=Y4ldQUQ1fXxvh7PqNKQxFrKLsFLkCdf7vSw0E8LsHz4");
 async function getImg(){
     let data = await images;
     let res = await data.json();
     console.log(res);
+    let c =0;
     img.addEventListener('click',()=>{
-        let i=Math.floor(Math.random()*19);
-        main.style.backgroundImage = `url(${res.hits[i].previewURL})`
+        main.style.backgroundImage = `url(${res[c].links.download})`
+        c++
+        if(c==9) c=0;
     })
 }
 
