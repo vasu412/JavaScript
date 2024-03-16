@@ -248,6 +248,9 @@ music_off.addEventListener('click',()=>{
     music_off.style.display = 'none'
     music_on.style.display = 'block';
     audio.play();
+    audio.addEventListener('ended', function() {
+        audio.play();
+    })
 })
 
 music_on.addEventListener('click',()=>{
