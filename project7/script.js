@@ -240,3 +240,18 @@ async function getImg(){
 
 getImg();
 
+let music_on = document.querySelector('.music');
+let music_off = document.querySelector('.music_off');
+var audio = new Audio('./positive-ambient-technology-12452.mp3');
+
+music_off.addEventListener('click',()=>{
+    music_off.style.display = 'none'
+    music_on.style.display = 'block';
+    audio.play();
+})
+
+music_on.addEventListener('click',()=>{
+    music_off.style.display = 'block'
+    music_on.style.display = 'none';
+    audio.pause()
+})
