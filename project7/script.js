@@ -55,17 +55,41 @@ async function abc() {
     let data = await fonts;
     let res = await data.json();
 
-    console.log(res)
     res.items.forEach((ele) => {
         let option = document.createElement('option');
-        // let atr = link.getAttribute('href');
-        // console.log(atr);
-        // link.setAttribute('href',atr+ele.family+"sherif"+"|")
-        // console.log(link)
+        option.classList.add('option');
         option.innerHTML= ele.family;
-        // main.style.fontFamily = ele.family
         select.appendChild(option)
     });
+
+    select.addEventListener('change', function(event) {
+        // Get the selected option
+        const selectedOption = event.target.selectedOptions[0];
+        // Get the text of the selected option
+        const selectedOptionText = selectedOption.textContent;
+
+        res.items.forEach((ele) => {
+            if(ele.family==selectedOptionText){
+                // Create a new style element
+                const styleElement = document.createElement('style');
+
+                // Define the @font-face rule
+                const fontFaceRule = `
+                    @font-face {
+                        font-family:'font';
+                        src: url(${ele.files.regular})
+                    }
+                `;
+                styleElement.innerHTML = fontFaceRule;
+                document.head.appendChild(styleElement);
+
+                h.style.fontFamily = 'font'
+                m.style.fontFamily = 'font'
+                s.style.fontFamily = 'font'
+            }
+        });
+    });
+
 }
 abc()
 
@@ -95,15 +119,6 @@ bg.addEventListener('click',()=>{
     main.style.backgroundColor = bg.value
 })
 
-tc.addEventListener('click',()=>{
-    main.style.color = tc.value
-})
-
-box.addEventListener('click',()=>{
-    main.style.backgroundColor = bg.value
-    main.style.color = tc.value
-})
-
 let white = document.querySelector('.white');
 let black = document.querySelector('.black');
 
@@ -111,12 +126,27 @@ white.addEventListener('click',()=>{
     h.style.color = 'white'
     m.style.color = 'white'
     s.style.color = 'white'
+    tc.value = '#f5f5f5'
 })
 
 black.addEventListener('click',()=>{
     h.style.color = 'black'
     m.style.color = 'black'
     s.style.color = 'black'
+    tc.value = '#030303'
+})
+
+tc.addEventListener('click',()=>{
+    h.style.color = tc.value
+    m.style.color = tc.value
+    s.style.color = tc.value
+})
+
+box.addEventListener('click',()=>{
+    main.style.backgroundColor = bg.value
+    h.style.color = tc.value
+    m.style.color = tc.value
+    s.style.color = tc.value
 })
 
 let minus = document.querySelector('.minus');
@@ -200,7 +230,6 @@ let images = fetch("https://api.unsplash.com/photos/?client_id=Y4ldQUQ1fXxvh7PqN
 async function getImg(){
     let data = await images;
     let res = await data.json();
-    console.log(res);
     let c =0;
     img.addEventListener('click',()=>{
         main.style.backgroundImage = `url(${res[c].links.download})`
@@ -210,3 +239,4 @@ async function getImg(){
 }
 
 getImg();
+
