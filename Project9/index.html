@@ -1,20 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        div{
-            color: black;
-            font-size: 1000px;
-            left: 120px;
-            /* rotate: 1deg; */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Image</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+  </style>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: 0 70px;
+    }
+    h1{
+      font-family: "Jomhuria", serif;
+      font-size: 50px;
+      font-weight: 300;
+    }
+    input{
+      background-color: #d1d1d162;
+      border: none;
+      border-radius: 5px;
+      height: 50px;
+      width: 600px;
+      padding-left: 10px;
+      font-size: 30px;
+      font-family: "Jomhuria", serif;
+      font-weight: 100;
+      color: #767676;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    #search{
+      height: 30px;
+      /* width: 50px; */
+      color: #767676;
+      position: absolute;
+      left: 47.5vw;
+      top:60px;
+      /* margin-top: 8px; */
+    }
+
+    .box{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    button{
+      width: 40px;
+      height: 50px;
+      border: none;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+
+    input:focus{
+      outline: none;
+    }
+  </style>
 </head>
-<body class="body">
-    <!-- <div></div> -->
-    <script src="script.js"></script>
+<body>
+  <h1>Search High Resolution images</h1>
+  <form action="#" style="display: flex;">
+    <input type="text" placeholder="" class="input" id="input">
+    <button class="button" name="input">
+    </button>
+  </form>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 " id="search">
+    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+  </svg>
+  <div class="box"></div>
+  <script src="script.js"></script>
 </body>
 </html>
