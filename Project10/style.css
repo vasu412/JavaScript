@@ -1,0 +1,43 @@
+img{
+    height: 130px;
+    width: 130px;
+    margin-top: 40px;
+}
+p{
+    text-align: center;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    margin-left: 58px;
+}
+
+div{
+    width: 240px;
+    height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+main{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.233);
+    width: 260px;
+    height: 300px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    bottom:173px;
+    left: -10px;
+}
+
+.img{
+    margin-left:420px;
+    width: 600px;
+    height: 170px;
+}
