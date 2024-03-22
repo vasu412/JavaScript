@@ -2,6 +2,7 @@ img{
     height: 130px;
     width: 130px;
     margin-top: 40px;
+    z-index: 999;
 }
 p{
     text-align: center;
@@ -23,6 +24,7 @@ div{
     text-align: center;
     position: relative;
     overflow: hidden;
+    z-index: -2;
 }
 
 main{
@@ -34,6 +36,8 @@ main{
     border-bottom-right-radius: 50%;
     bottom:173px;
     left: -10px;
+    z-index: -1;
+    opacity: 0.9;
 }
 
 .img{
